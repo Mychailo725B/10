@@ -4,6 +4,8 @@
 
 using namespace std;
 
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 struct StudentDebt {
     string Surname;
     int debtCount;
@@ -33,8 +35,6 @@ void sort_debts(StudentDebt* students, int num) {
 
 void main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
 
     int num;
     cout << "Введіть кількість студентів: ";
