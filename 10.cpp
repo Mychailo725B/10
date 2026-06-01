@@ -1,11 +1,9 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include "windows.h"
 
 using namespace std;
 
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
 struct StudentDebt {
     string Surname;
     int debtCount;
@@ -21,6 +19,7 @@ void print_all_students(StudentDebt* students, int num) {
     }
 }
 
+ 
 void sort_debts(StudentDebt* students, int num) {
     for (int i = 0; i < num - 1; i++) {
         for (int j = 0; j < num - i - 1; j++) {
@@ -33,8 +32,10 @@ void sort_debts(StudentDebt* students, int num) {
     }
 }
 
-void main()
+int main()  
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
     int num;
     cout << "Введіть кількість студентів: ";
@@ -54,7 +55,7 @@ void main()
 
     print_all_students(students, num);
 
-    sort_by_debts(students, num);
+    sort_debts(students, num);
 
     cout << "\n Список студентів у порядку зростання заборгованостей \n";
     for (int i = 0; i < num; i++) {
@@ -62,5 +63,6 @@ void main()
             << " (Боргів: " << students[i].debtCount
             << ", Предмет: " << students[i].subject << ")" << endl;
     }
-    delete[] students;
+
+    return 0;
 }
